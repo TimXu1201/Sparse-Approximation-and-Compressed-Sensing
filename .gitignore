@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Archives
+*.zip
+
+# Assignment handout and reference paper
+2026_ECE 269 MIni Project 1.pdf
+Greed_is_good_algorithmic_results_for_sparse_approximation.pdf
+
+# Course-distributed input assets
+pr5/*.mat
+pr6/*.mat
+pr6/*.tiff
+
+# Large generated outputs
+results/**/*.npy
+results/**/*.wav
