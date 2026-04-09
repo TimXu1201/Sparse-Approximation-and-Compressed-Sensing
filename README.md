@@ -1,49 +1,43 @@
-# ECE 269 Mini Project 1: Sparse Approximation and Compressed Sensing
+# Sparse Approximation and Compressed Sensing
 
-This project implements several classical sparse-recovery experiments built around **Orthogonal Matching Pursuit (OMP)** and least-squares reconstruction.
+This repository focuses on sparse recovery and compressed reconstruction based on **Orthogonal Matching Pursuit (OMP)** and least-squares decoding.
 
-The work is organized into three parts:
+The work is organized around three main directions:
 
-- **Phase-transition experiments** in the noiseless setting
-- **Noisy sparse recovery** with different stopping rules
-- **Compressed image and audio decoding** using sparse representations
+- noiseless phase-transition experiments
+- noisy sparse recovery under different stopping rules
+- compressed image and compressed audio reconstruction
 
 ## Project Highlights
 
-- clean OMP implementation with configurable stopping rules
-- Monte Carlo phase-transition experiments over varying measurement dimensions and sparsity levels
-- comparison between OMP and least-squares recovery
-- compressed image reconstruction from linear measurements
-- compressed audio reconstruction with dictionary-based sparse coding
+- configurable OMP implementation for several recovery settings
+- Monte Carlo experiments across varying measurement dimensions and sparsity levels
+- comparison between OMP and least-squares reconstruction
+- reconstruction of compressed images from linear measurements
+- sparse decoding of compressed audio signals
 
-## Main Files
+## Included Materials
 
 - `pr3_pr4.py`
-  Phase-transition experiments for noiseless and noisy sparse recovery.
+  Sparse-recovery experiments in noiseless and noisy settings.
 - `pr5_pr6.py`
   Reconstruction pipeline for compressed image and audio examples.
 - `plot_results.py`
   Plotting utilities for heatmaps and summary figures.
 - `load_data.py`
-  Helper loader used by the PR6 audio task.
+  Helper loader for the main scripts.
+- `pr6/load_data.py`
+- `pr6/loading_data.m`
+  Additional loading utilities used by the audio workflow.
 - `results/`
   Selected plots generated from the experiments.
+- project-description PDF
 
-## What Is Published Here
+## Run Examples
 
-This public version focuses on:
+Run commands from the repository root.
 
-- the source code
-- the command structure
-- selected result plots that demonstrate the outcomes
-
-To keep the repository clean, course-distributed raw input assets and bulky generated arrays are excluded by `.gitignore`.
-
-## Run Commands
-
-Run all commands from the project root.
-
-### PR3: Noiseless Phase Transition
+### Noiseless Phase Transition
 
 ```bash
 python pr3_pr4.py noiseless --N 20
@@ -51,7 +45,7 @@ python pr3_pr4.py noiseless --N 50
 python pr3_pr4.py noiseless --N 100
 ```
 
-### PR4(a): Noisy Recovery with Known Sparsity
+### Noisy Recovery with Known Sparsity
 
 ```bash
 python pr3_pr4.py noisy_known_s --N 20 --sigma 0.05
@@ -59,7 +53,7 @@ python pr3_pr4.py noisy_known_s --N 50 --sigma 0.05
 python pr3_pr4.py noisy_known_s --N 100 --sigma 0.05
 ```
 
-### PR4(b): Noisy Recovery with Known Noise Norm
+### Noisy Recovery with Known Noise Norm
 
 ```bash
 python pr3_pr4.py noisy_known_normn --N 20 --sigma 0.05
@@ -75,28 +69,20 @@ python plot_results.py results/noisy_known_s
 python plot_results.py results/noisy_known_normn
 ```
 
-### PR5: Compressed Image Recovery
+### Compressed Image Reconstruction
 
 ```bash
 python pr5_pr6.py pr5
 ```
 
-### PR6: Compressed Audio Recovery
+### Compressed Audio Reconstruction
 
 ```bash
 python pr5_pr6.py pr6
 ```
 
-## Outputs
+## Public Scope
 
-Typical outputs include:
+This public version keeps the implementation, the command structure, selected output figures, and the main documentation PDF.
 
-- success-rate heatmaps
-- normalized-error heatmaps
-- reconstructed image comparisons
-- reconstructed audio waveforms
-
-## Notes
-
-- The original project was developed for a course setting, so some inputs were distributed separately and are not included in this public repository.
-- The existing `read me.md` file is kept as a historical note; this `README.md` is the polished public-facing version.
+External raw input assets and bulky generated arrays are intentionally excluded to keep the repository lightweight and easier to browse.
